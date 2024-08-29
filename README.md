@@ -62,5 +62,7 @@ The system software consists of several layers:
   Finally, the assembler converts these executable files into binary code, which is the machine language that the hardware can understand and execute to carry out the intended operations.
 
 # Overview of OpenLane Components for Digital ASIC Design
-To Design an Open-Source Digital ASIC, Several Key Components Are Required
+To Design an Open-Source Digital ASIC, Several Key Components Are Required:
+![image](https://github.com/user-attachments/assets/ecdbebc3-4ae5-411c-8626-a1bb0f7278e4)
+
 
