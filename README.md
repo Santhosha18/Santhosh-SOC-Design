@@ -64,5 +64,44 @@ The system software consists of several layers:
 # Overview of OpenLane Components for Digital ASIC Design
 To Design an Open-Source Digital ASIC, Several Key Components Are Required:
 ![image](https://github.com/user-attachments/assets/ecdbebc3-4ae5-411c-8626-a1bb0f7278e4)
+- **RTL Designs**
+- **EDA Tools**
+- **PDK Data**
+  
+  ## Key Concepts in Digital ASIC Design
+
+- **What are RTL Designs?**
+
+  RTL (Register-Transfer-Level) design is a critical phase in the VLSI design flow, focused on creating electronic circuits using integrated circuits (ICs). It specifies a digital circuit by describing the flow of digital signals between hardware registers and the logical operations performed on these signals.
+
+- **What are EDA Tools?**
+
+  EDA (Electronic Design Automation) tools are software applications used to design and verify the functionality of integrated circuits (ICs). They ensure that the IC meets the required performance and density specifications.
+
+- **What is PDK Data?**
+
+  PDK (Process Design Kit) is a set of files used to model a fabrication process for EDA tools during IC design. This kit includes:
+
+- Process Design Rules:
+  - DRC (Design Rule Check)
+  - LVS (Layout Versus Schematic)
+  - PEX (Parasitic Extraction)
+
+- Device Models
+
+- Digital Standard Cell Libraries
+
+I/O Libraries
+# Simplified RTL to GDS Flow
+
+The streamlined RTL to GDSII process starts with an RTL file and, through several key stages, results in a GDSII file ready for fabrication by a foundry. The stages in this process include:
+
+![image](https://github.com/user-attachments/assets/277c7861-5936-4887-96a9-de1aab8f3925)
+
+Synthesis:
+    The RTL file is converted into a circuit using components from the Standard Cell Library.
+    Standard Cells in the library have a regular layout with the same height but different widths.
+    Each cell has various models based on electrical, HDL, Spice, and layout (abstract and detailed) parameters.
+
 
 
