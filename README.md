@@ -298,6 +298,42 @@ $$
 
 ![Screenshot 2024-08-25 225500](https://github.com/user-attachments/assets/0fb5e60c-1922-46ee-9a35-59d02d28e9c1)
 
+# Day 2
+
+## Good FloorPlan Vs Bad FloorPlan and Introduction to Library Cells
+
+Chip FloorPlanning Considerations
+
+![image](https://github.com/user-attachments/assets/aab5f79f-3631-4005-a5af-db3fc51fc9df)
+
+### Utilization Factor and Aspect Ratio
+
+To determine the Utilization Factor and Aspect Ratio, it is essential to define the height and width of both the core and die areas.
+
+**Core Area:**
+- The core is the region of the chip designated for placing all the logic cells and components. It contains the actual logic of the chip.
+
+**Die Area:**
+- The die area surrounds the core and is used for placing I/O-related components and other peripheral elements.
+
+**Core Area Dimensions:**
+- The height and width of the core area are determined by the netlist of the design, which specifies the number and arrangement of components needed to implement the logic.
+
+**Die Area Dimensions:**
+- The height and width of the die area depend on the dimensions of the core area, as it must accommodate the core plus additional space for I/O and other components.
+
+![image](https://github.com/user-attachments/assets/e842f0b5-e8fc-47e6-8a74-efb8c62b679d)
+
+For instance, consider a netlist with two logic gates and two flip-flops, each occupying an area of 1 square unit. The netlist consists of 4 elements, so the minimum total area required for the core area would be 4 square units.
+
+![image](https://github.com/user-attachments/assets/60b4abfb-67ee-4ae5-9c27-03e7fcda7bdb)
+
+![image](https://github.com/user-attachments/assets/34eec1f7-f4d7-4d71-afa0-adf446400ddd)
+
+### Utilization Factor:
+The Utilization Factor is defined as the ratio of the core area occupied by the netlist to the total core area. For an effective FloorPlan, the Utilization Factor should not be '1'. If the Utilization Factor is '1', it indicates that the core area is fully occupied with no additional space for extra logic, which is indicative of a poor FloorPlan.
+
+
 
 
 
