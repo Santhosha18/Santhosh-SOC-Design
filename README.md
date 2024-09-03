@@ -333,9 +333,36 @@ For instance, consider a netlist with two logic gates and two flip-flops, each o
 ### Utilization Factor:
 The Utilization Factor is defined as the ratio of the core area occupied by the netlist to the total core area. For an effective FloorPlan, the Utilization Factor should not be '1'. If the Utilization Factor is '1', it indicates that the core area is fully occupied with no additional space for extra logic, which is indicative of a poor FloorPlan.
 
+`Utilization Factor = (Area occupied by netlist / Total core area)`
 
+**Aspect Ratio**: The Aspect Ratio is defined as the ratio of the height of the core to the width of the core. If the Aspect Ratio is `1`, the core is considered to be square-shaped. For values other than `1`, the core will be rectangular.
 
+`Aspect Ratio = (Height of the core / Width of the core)`
 
+![image](https://github.com/user-attachments/assets/752d2ccf-43c4-4877-8139-8b9850fc8d23)
+
+In this case, when calculated:
+
+`Utilization factor = (4 squnits) / (4 squnits) = 1`
+
+`Aspect Ratio = (2 units) / (2 units) = 1`  // The core is in a square shape.
+
+![image](https://github.com/user-attachments/assets/9e34cc60-5e82-4ffc-bc83-b781dd324062)
+
+In this case, when calculated:
+
+`Utilization factor = (4 squnits) / (8 squnits) = 0.5`
+
+`Aspect Ratio = (2 units) / (4 units) = 0.5`  // The core is in a rectangular shape.
+
+# Day 2 Labs
+# Steps to Execute a Floorplan Using OpenLANE
+
+![image](https://github.com/user-attachments/assets/af225503-6c38-4a1a-bc72-773e61f0aa4a)
+
+As designers, it is crucial to manage certain switches that influence the floorplan process. For instance, the utilization factor and aspect ratio are key switches that must be carefully reviewed. Designers should verify that these settings align with the project's requirements before initiating the floorplan. The image below highlights various switches used in the floorplan stage.
+
+    % run_floorplan
 
 
 
