@@ -364,6 +364,21 @@ As designers, it is crucial to manage certain switches that influence the floorp
 
     % run_floorplan
 
+![image](https://github.com/user-attachments/assets/22ba468d-ae1a-4f3c-8240-457d87d9b34b)
+
+![image](https://github.com/user-attachments/assets/f0578e97-686b-4c74-87d0-94dc7760d41a)
+
+After completing the floorplan, you can examine the generated report to evaluate factors like die area. For visualizing the design within a graphical user interface (GUI), consider using the MAGIC tool.
+
+![image](https://github.com/user-attachments/assets/4b515c2e-1626-4fb7-b06f-e2e2fcbe85be)
+
+
+
+![image](https://github.com/user-attachments/assets/3c791512-5ca8-47b8-9c6d-82f4c93a3486)
+Floorplan layout in magic
+
+
+
 
 
 
