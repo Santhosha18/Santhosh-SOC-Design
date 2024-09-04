@@ -370,12 +370,138 @@ As designers, it is crucial to manage certain switches that influence the floorp
 
 After completing the floorplan, you can examine the generated report to evaluate factors like die area. For visualizing the design within a graphical user interface (GUI), consider using the MAGIC tool.
 
+    magic -T ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef  ../../tmp/merged.lef def read picorv32a.floorplan.def &
+
 ![image](https://github.com/user-attachments/assets/4b515c2e-1626-4fb7-b06f-e2e2fcbe85be)
 
 
 
 ![image](https://github.com/user-attachments/assets/3c791512-5ca8-47b8-9c6d-82f4c93a3486)
 Floorplan layout in magic
+
+## Design Alignment Procedures
+
+**Aligning the Design to Center:**
+- Press **S** to select all elements of the design.
+- Press **V** to center it vertically on the screen.
+
+**Focusing on a Specific Region:**
+- Left-click and drag to highlight the area of interest.
+- Right-click to access the context menu.
+- Press **Z** to zoom into the highlighted region.
+
+**Retrieving Cell Information:**
+- Hover your cursor over the cell you want to examine.
+- Press **S** to select the cell.
+- In the tkcon window, type `"what"` to view the cell's details.
+
+![image](https://github.com/user-attachments/assets/5828bde0-9088-45d8-8503-ef234b0d3f24)
+
+## Placement in VLSI Design
+**The Importance of Placement in VLSI Design**
+
+Placement is a key process in VLSI (Very Large Scale Integration) design, where the physical locations of standard cells or logic elements within a chip are determined. The process is typically divided into two stages:
+
+**Global Placement:**
+
+- General locations are assigned to movable objects (cells).
+- Overlaps between placed objects are allowed during this phase.
+- The primary objective is to achieve a preliminary layout that meets area requirements.
+
+**Detailed Placement:**
+
+- Refines the positions of objects set during global placement.
+- Ensures non-overlapping and proper alignment of cells on legal sites.
+- The precision of detailed placement is crucial for the success of the subsequent routing stages.
+
+      %run_placements
+  
+![image](https://github.com/user-attachments/assets/3529df27-e5bf-4704-b6ee-007d9d4f8d37)
+
+      magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
+
+![image](https://github.com/user-attachments/assets/6102d758-c07d-4837-96b7-d56ce7f980e5)
+
+![image](https://github.com/user-attachments/assets/5918c7c1-1a0a-47fa-bb32-ca2878395c2b)
+
+**Design Inputs**
+
+| **Item**                       | **Description**                                                                                   |
+|--------------------------------|---------------------------------------------------------------------------------------------------|
+| **Process Design Kits (PDKs)** | Technology-specific information necessary for chip design.                                         |
+| **DRC and LVS rules**          | Ensure compliance with layout and schematic rules.                                                |
+| **SPICE models**               | Describe transistor behavior for accurate circuit simulation.                                      |
+| **Custom Libraries & Specs**   | Project-specific libraries and user-defined specifications.                                       |
+
+**Design Steps**
+
+**1. Circuit Design:**
+
+- Develop the logical schematic.
+- Specify the functionality and interconnections of standard cells.
+
+**2. Layout Design:**
+
+- Utilize layout tools like MAGIC to create the physical design.
+- Adhere to placement and routing guidelines.
+
+**3. Characterization with GUNA:**
+
+- Conduct timing, power, and noise characterizations.
+- Ensure the design meets all required specifications.
+
+**Design Outputs**
+
+- **CDL (Circuit Description Language):** Provides a textual representation of the circuit.
+- **GDSII:** The final layout file used for fabrication.
+- **LEF (Library Exchange Format):** Details cell sizes, pin locations, and more.
+- **SPICE Extracted Netlist:** Includes parasitic elements for detailed circuit simulation.
+- **Timing, Noise, and Power Libraries:** Results from the characterization process.
+
+# Day 3
+
+# Characterizing an Inverter with Sky130 Model Files
+
+## Simulating a CMOS Inverter with ngspice
+
+This guide outlines the steps to create a CMOS inverter netlist, conduct DC and transient analyses using ngspice, and analyze important static and dynamic properties.
+
+## Key Static Characteristics
+
+1. **Switching Threshold (Vth):**
+   - The specific voltage where the inverter output switches from logic high (1) to logic low (0).
+
+2. **Input Low Voltage (Vil):**
+   - The highest voltage that is still interpreted as a logic 0 by the inverter.
+
+3. **Input High Voltage (Vih):**
+   - The lowest voltage that is interpreted as a logic 1 by the inverter.
+
+4. **Output Low Voltage (Vol):**
+   - The voltage level when the inverter output changes from high to low.
+
+5. **Output High Voltage (Voh):**
+   - The voltage level when the inverter output changes from low to high.
+
+6. **Noise Margins:**
+   - Defined by the voltage ranges between Vil and Vol (low noise margin) and between Vih and Voh (high noise margin), representing the inverter’s tolerance to noise.
+
+## Dynamic Characteristics
+
+1. **Propagation Delays:**
+   - The duration required for the output to respond to a change in the input signal.
+
+2. **Rise Time (tr):**
+   - The duration it takes for the output to rise from Vol to Voh.
+
+3. **Fall Time (tf):**
+   - The duration it takes for the output to fall from Voh to Vol.
+
+
+
+
+  
+
 
 
 
