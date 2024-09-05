@@ -571,6 +571,29 @@ Functionality:
 - Provides information about horizontal and vertical tracks available on each metal layer.
 - Specifies pitch, spacing, and other relevant details necessary for efficient routing.
 
+# Day 3 labs
+
+Magic Layout View for CMOS Inverter
+
+Refer to the relevant documentation or resources to obtain the necessary cell files.
+
+[vsdstdcelldesigngit](https://github.com/nickson-jose/vsdstdcelldesign.git)
+
+To clone the repository, run the following command in your terminal:
+
+`git clone https://github.com/nickson-jose/vsdstdcelldesign.git`
+
+![image](https://github.com/user-attachments/assets/6b2c07e2-e2a9-4865-b1fe-2617e6823afa)
+
+To copy the `sky13A.tech` file to the desired path, use the following command:
+
+`~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic$ cp sky130A.tech /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign/`
+
+![image](https://github.com/user-attachments/assets/0e230be6-e209-4f91-95bd-017edd099909)
+
+
+
+
 
 
   
