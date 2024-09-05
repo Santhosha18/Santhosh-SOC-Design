@@ -1,5 +1,7 @@
-# Digital VLSI SoC Design and planning Training
-Welcome to the OpenLane workshop! In this workshop, we'll explore the complete process of designing an Application Specific Integrated Circuit (ASIC) using the OpenLane ASIC flow. We'll start with a Register Transfer Level (RTL) design and proceed through each stage of the flow, ultimately generating a Graphical Data System (GDS) file. The workshop covers all essential steps involved in this process.
+# Digital VLSI SoC Design and Planning Training
+
+During the OpenLane workshop, I gained hands-on experience in designing an Application Specific Integrated Circuit (ASIC) using the OpenLane ASIC flow. Starting with a Register Transfer Level (RTL) design, I went through each stage of the flow, learning how to generate a Graphical Data System (GDS) file. The workshop provided me with a deep understanding of the complete ASIC design process and all the essential steps involved.
+
 ## Lessons Learned
 Comprehending the RTL to GDS Process
 1. Complete RTL to ASIC Layout Process 
@@ -590,6 +592,15 @@ To copy the `sky13A.tech` file to the desired path, use the following command:
 `~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic$ cp sky130A.tech /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign/`
 
 ![image](https://github.com/user-attachments/assets/0e230be6-e209-4f91-95bd-017edd099909)
+
+
+To view the inverter in Magic, use the following command:
+
+`magic -T sky130A.tech sky130_inv.mag &`
+
+![image](https://github.com/user-attachments/assets/d7370a24-9157-4878-93ac-96f5aa7dbee6)
+
+![image](https://github.com/user-attachments/assets/baacc65b-ca3e-4c99-8a13-235abae38669)
 
 
 
