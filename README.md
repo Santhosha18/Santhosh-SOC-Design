@@ -603,6 +603,24 @@ To view the inverter in Magic, use the following command:
 ![image](https://github.com/user-attachments/assets/baacc65b-ca3e-4c99-8a13-235abae38669)
 
 
+1. NMOS Selection:
+   - Select the NMOS area in Magic.
+   - In the `tkcon` window, type `what`.
+   - Observe the mask layer details for NMOS.
+
+![image](https://github.com/user-attachments/assets/8ccd8aeb-9034-47ad-959e-affa7deeda32)
+
+
+3. PMOS Selection:
+   - Select the PMOS area in Magic.
+   - In the `tkcon` window, type `what`.
+   - Check the displayed details for the PMOS mask layer.
+
+![image](https://github.com/user-attachments/assets/e0b7a07d-0eaf-48b6-b86a-3c4389d6b8e5)
+
+
+
+
 
 
 
