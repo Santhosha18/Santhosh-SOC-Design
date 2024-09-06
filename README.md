@@ -619,6 +619,96 @@ To view the inverter in Magic, use the following command:
 ![image](https://github.com/user-attachments/assets/e0b7a07d-0eaf-48b6-b86a-3c4389d6b8e5)
 
 
+To extract parasitics and characterize the cell design, enter the following commands in the `tkcon` window.
+
+    extract all
+    ext2spice cthresh 0 rthresh 0
+    ext2spice
+
+![image](https://github.com/user-attachments/assets/c10fad32-d644-481d-ba57-f85688bdd804)
+
+![image](https://github.com/user-attachments/assets/404b76eb-89e7-4119-bf92-4d619c2ddaaa)
+
+![image](https://github.com/user-attachments/assets/d6185efd-df86-4368-9cbf-692e7a7b3618)
+
+![image](https://github.com/user-attachments/assets/5c050c2f-9be1-40e4-bc49-6099b6521e5c)
+
+Modify the file according to the below:
+
+![image](https://github.com/user-attachments/assets/744b3931-f360-4fb0-a379-8a09df9d1419)
+
+
+To simulate the SPICE file, run the following command in the terminal:
+
+`ngspice sky130_inv.spice`
+
+![image](https://github.com/user-attachments/assets/a2ceb80c-78e6-4a77-9aa8-48c389ac5643)
+![image](https://github.com/user-attachments/assets/a7c234ac-c45d-4418-8c90-a34fef88ed19)
+
+# Characterizing the Inverter using Sky130 Model Files:
+
+## Parameters to Characterize
+
+1. **Rise Time:**
+   - Measures the time for the output signal to rise from 20% to 80% of its peak value.
+   - Data:
+     - \( x_0 = 6.16138e-09 \) s, \( y_0 = 0.660007 \)
+     - \( x_1 = 6.20366e-09 \) s, \( y_1 = 2.64009 \)
+   - **Calculated rise time:** 0.0422 ns
+
+2. **Fall Time:**
+   - Measures the time for the output signal to fall from 80% to 20% of its peak value.
+   - Data:
+     - \( x_0 = 8.04034e-09 \) s, \( y_0 = 2.64003 \)
+     - \( x_1 = 8.06818e-09 \) s, \( y_1 = 0.659993 \)
+   - **Calculated fall time:** 0.0278 ns
+
+3. **Propagation Delay:**
+   - Time delay between a 50% transition at input and a corresponding 50% transition at the output.
+   - Data:
+     - \( x_0 = 2.18449e-09 \) s, \( y_0 = 1.64994 \)
+     - \( x_1 = 2.15e-09 \) s, \( y_1 = 1.65011 \)
+   - **Calculated propagation delay:** 0.034 ns
+
+4. **Cell Fall Delay:**
+   - Time taken for the output to drop (1 to 0) corresponding to the input rising (0 to 1).
+   - Data:
+     - \( x_0 = 4.05432e-09 \) s, \( y_0 = 1.65 \)
+     - \( x_1 = 4.05001e-09 \) s, \( y_1 = 1.65 \)
+   - **Calculated cell fall delay:** 0.0043 ns
+
+## LEF File Creation
+
+## Creating a LEF File
+
+After successfully characterizing the inverter, the next step is to create a LEF (Library Exchange Format) file. Download the necessary file using:
+
+wget http://opencircuitdesign.com/open_pdks/archive/drc_tests.tgz
+
+
+## VLSI Layout Geometries and DRC Errors
+
+In this section, we examine independent example layout geometries (M3.1, M3.2, M3.5, and M3.6) and highlight the specific Design Rule Check (DRC) errors associated with each:
+
+1. **M3.1 (Metal Width DRC):**
+   - **Violation:** The metal trace width in M3.1 is below the specified minimum width threshold.
+   - **Error:** Metal width does not meet design rules.
+
+2. **M3.2 (Metal Spacing DRC):**
+   - **Violation:** The distance between adjacent metal traces in M3.2 does not meet the required spacing.
+   - **Error:** Metal spacing violation.
+
+3. **M3.5 (Via Overlapping DRC):**
+   - **Violation:** The vias in M3.5 overlap with each other.
+   - **Error:** Via overlapping issue.
+
+4. **M3.6 (Minimum Area DRC):**
+   - **Violation:** The enclosed area within M3.6 does not meet the specified minimum area requirement.
+   - **Error:** Minimum area violation.
+
+
+
+
 
 
 
